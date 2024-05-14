@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="AnswerPlugin.commands.category"
+            name="Sample Category">
+      </category>
+      <command
+            categoryId="AnswerPlugin.commands.category"
+            name="Sample Command"
+            id="AnswerPlugin.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="answerplugin.handlers.Handler"
+            commandId="AnswerPlugin.commands.sampleCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="AnswerPlugin.commands.sampleCommand"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="AnswerPlugin.menus.sampleMenu"
+               label="Sample Menu"
+               mnemonic="M">
+            <command
+                  commandId="AnswerPlugin.commands.sampleCommand"
+                  id="AnswerPlugin.menus.sampleCommand"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="AnswerPlugin.toolbars.sampleToolbar">
+            <command
+                  id="AnswerPlugin.toolbars.sampleCommand"
+                  commandId="AnswerPlugin.commands.sampleCommand"
+                  icon="icons/video.png"
+                  tooltip="CodeLlama Answer Plugin">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+<dependency>
+  <groupId>org.json</groupId>
+  <artifactId>json</artifactId>
+  <version>20090211</version>
+</dependency>
+</plugin>
