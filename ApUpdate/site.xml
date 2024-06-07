@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="ApUpdate">
+      This is update site for answerPlugin
+   </description>
+   <feature url="features/ApFeature_1.0.0.202406071612.jar" id="ApFeature" version="1.0.0.202406071612">
+      <category name="ApUpdate"/>
+   </feature>
+   <category-def name="ApUpdate" label="ApUpdate"/>
+</site>
